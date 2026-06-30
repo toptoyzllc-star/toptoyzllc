@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOP TOYZ LLC — Toys & Family Fashion</title>
+<meta name="description" content="TOP TOYZ LLC sells kids toys and fashion for the whole family. Quality, affordable, and made for play.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF8EC;
+    --paper:#FFFCF7;
+    --ink:#1B1B1F;
+    --teal:#1B4B43;
+    --teal-light:#2E6B5E;
+    --coral:#FF6B52;
+    --coral-dark:#E5503A;
+    --yellow:#FFC44D;
+    --lavender:#C9B6E8;
+    --line:#E7DFCE;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Plus Jakarta Sans', sans-serif;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,248,236,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; max-width:1180px; margin:0 auto;
+  }
+  .logo{display:flex; align-items:center; gap:10px; font-family:'Baloo 2'; font-weight:800; font-size:22px; color:var(--teal);}
+  .logo .dot{width:12px;height:12px;border-radius:50%;background:var(--coral);display:inline-block;}
+  nav ul{list-style:none; display:flex; gap:30px; font-weight:600; font-size:15px;}
+  nav ul a{padding:6px 0; border-bottom:2px solid transparent; transition:border-color .2s;}
+  nav ul a:hover, nav ul a:focus-visible{border-color:var(--coral); outline:none;}
+  .nav-cta{
+    background:var(--teal); color:var(--paper); padding:10px 20px; border-radius:30px;
+    font-weight:700; font-size:14px; white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--teal-light);}
+  .nav-toggle{display:none;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:90px 0 60px;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.1fr 1fr; gap:50px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--paper); border:1px solid var(--line); padding:7px 14px; border-radius:30px;
+    font-size:13px; font-weight:700; color:var(--teal); margin-bottom:22px;
+  }
+  .eyebrow svg{width:14px;height:14px;}
+  .hero h1{
+    font-size:clamp(40px,5.4vw,68px);
+    line-height:0.98;
+    color:var(--ink);
+  }
+  .hero h1 .hl-coral{color:var(--coral);}
+  .hero h1 .hl-teal{color:var(--teal);}
+  .hero p.lead{
+    margin-top:22px; font-size:18px; max-width:480px; color:#4A463E;
+  }
+  .hero-actions{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+  .btn{
+    padding:14px 26px; border-radius:30px; font-weight:700; font-size:15px; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--coral); color:#fff; box-shadow:0 6px 0 var(--coral-dark);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-primary:active{transform:translateY(2px); box-shadow:0 2px 0 var(--coral-dark);}
+  .btn-ghost{background:transparent; border:2px solid var(--teal); color:var(--teal);}
+  .btn-ghost:hover{background:var(--teal); color:#fff;}
+
+  .hero-art{position:relative; height:440px;}
+  .float{position:absolute; filter:drop-shadow(0 14px 18px rgba(27,27,31,0.12));}
+  .f1{top:0; left:10%; width:170px; animation:bob 5s ease-in-out infinite;}
+  .f2{top:170px; right:0; width:150px; animation:bob 6s ease-in-out infinite 0.5s;}
+  .f3{bottom:0; left:0; width:190px; animation:bob 5.5s ease-in-out infinite 1s;}
+  .f4{bottom:60px; right:60px; width:110px; animation:bob 4.5s ease-in-out infinite 1.5s;}
+  @keyframes bob{0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);}}
+
+  /* ---------- shelf divider (signature element) ---------- */
+  .shelf{position:relative; height:64px; margin:10px 0;}
+  .shelf svg{width:100%; height:100%; display:block;}
+
+  /* ---------- trust strip ---------- */
+  .trust{
+    background:var(--teal); color:var(--paper); padding:18px 0;
+  }
+  .trust .wrap{display:flex; flex-wrap:wrap; gap:30px; justify-content:space-between; align-items:center; font-size:14px; font-weight:600;}
+  .trust span{display:flex; align-items:center; gap:8px; opacity:0.95;}
+  .trust svg{width:16px;height:16px;}
+
+  /* ---------- section heading ---------- */
+  .section{padding:90px 0;}
+  .section-head{max-width:600px; margin-bottom:50px;}
+  .section-head .tag{
+    font-size:13px; font-weight:800; color:var(--coral); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px; display:block;
+  }
+  .section-head h2{font-size:clamp(28px,3.6vw,42px); color:var(--ink);}
+  .section-head p{margin-top:14px; color:#4A463E; font-size:16px;}
+
+  /* ---------- categories ---------- */
+  .cat-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  .cat-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+    padding:34px; position:relative; overflow:hidden;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .cat-card:hover{transform:translateY(-6px); box-shadow:0 18px 30px rgba(27,27,31,0.08);}
+  .cat-card .icon-wrap{
+    width:64px; height:64px; border-radius:16px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+  }
+  .cat-card.toys .icon-wrap{background:#FFE3DC;}
+  .cat-card.fashion .icon-wrap{background:#EDE5FA;}
+  .cat-card h3{font-size:24px; margin-bottom:10px;}
+  .cat-card p{color:#4A463E; font-size:15px; margin-bottom:18px;}
+  .tag-row{display:flex; gap:8px; flex-wrap:wrap;}
+  .pill{font-size:12px; font-weight:700; background:var(--cream); border:1px solid var(--line); padding:5px 12px; border-radius:20px; color:#5b5749;}
+
+  /* ---------- products preview ---------- */
+  .product-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .product-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:16px; overflow:hidden;
+    transition:transform .2s ease;
+  }
+  .product-card:hover{transform:translateY(-4px);}
+  .product-thumb{aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; padding:24px;}
+  .product-info{padding:16px 18px 20px;}
+  .product-info .pname{font-weight:700; font-size:15px;}
+  .product-info .pprice{color:var(--coral); font-weight:800; margin-top:4px; font-size:15px;}
+
+  /* ---------- about / why ---------- */
+  .about{background:var(--teal); color:var(--paper); border-radius:32px; margin:0 28px;}
+  .about-inner{max-width:1124px; margin:0 auto; padding:80px 56px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
+  .about h2{color:#fff; font-size:clamp(28px,3.4vw,40px);}
+  .about p{margin-top:18px; color:#DCE7E3; font-size:16px;}
+  .stat-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:30px;}
+  .stat b{font-family:'Baloo 2'; font-size:32px; display:block; color:var(--yellow);}
+  .stat span{font-size:13px; color:#BFD3CC;}
+  .about-art{display:flex; justify-content:center;}
+
+  /* ---------- values ---------- */
+  .values-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .value-card{padding:30px; border-radius:var(--radius); background:var(--paper); border:1px solid var(--line);}
+  .value-card .num{font-family:'Baloo 2'; font-size:14px; font-weight:700; color:var(--coral); margin-bottom:14px;}
+  .value-card h3{font-size:19px; margin-bottom:8px;}
+  .value-card p{font-size:14.5px; color:#4A463E;}
+
+  /* ---------- contact / business info ---------- */
+  .contact{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:50px;}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px;}
+  .info-list{display:flex; flex-direction:column; gap:22px;}
+  .info-item{display:flex; gap:16px; align-items:flex-start;}
+  .info-item .ic{
+    width:42px; height:42px; border-radius:12px; background:var(--cream); display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .info-item .ic svg{width:20px; height:20px; color:var(--teal);}
+  .info-item h4{font-size:15px; margin-bottom:2px;}
+  .info-item p{font-size:14.5px; color:#4A463E;}
+  .placeholder{background:#FFF1D6; color:#8a6300; padding:1px 6px; border-radius:5px; font-weight:700; font-size:13px;}
+  .form-field{margin-bottom:16px;}
+  .form-field label{display:block; font-size:13px; font-weight:700; margin-bottom:6px; color:#4A463E;}
+  .form-field input, .form-field textarea{
+    width:100%; padding:13px 16px; border-radius:10px; border:1px solid var(--line); background:var(--cream);
+    font-family:inherit; font-size:14.5px;
+  }
+  .form-field input:focus, .form-field textarea:focus{outline:2px solid var(--coral); outline-offset:1px;}
+
+  /* ---------- footer ---------- */
+  footer{padding:50px 0 30px; border-top:1px solid var(--line); margin-top:40px;}
+  .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px;}
+  .foot-brand{max-width:280px;}
+  .foot-brand p{font-size:13.5px; color:#6b6757; margin-top:10px;}
+  .foot-cols{display:flex; gap:60px; flex-wrap:wrap;}
+  .foot-col h5{font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:14px; color:#6b6757;}
+  .foot-col ul{list-style:none; display:flex; flex-direction:column; gap:10px; font-size:14px;}
+  .foot-bottom{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); font-size:13px; color:#8a8674; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+
+  @media (max-width:880px){
+    nav ul{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-art{height:300px; margin-top:20px;}
+    .cat-grid, .product-grid, .values-grid, .about-inner, .contact-grid{grid-template-columns:1fr;}
+    .product-grid{grid-template-columns:1fr 1fr;}
+    .about{margin:0 16px;}
+    .about-inner{padding:50px 28px;}
+    .contact{padding:30px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo"><span class="dot"></span>TOP TOYZ <span style="color:var(--coral)">LLC</span></a>
+    <ul>
+      <li><a href="#toys">Toys</a></li>
+      <li><a href="#fashion">Fashion</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.2H22l-6 4.6L18.4 21 12 16.4 5.6 21 8 13.8 2 9.2h7.6z"/></svg>
+          Family-owned &middot; Kids toys &amp; fashion
+        </span>
+        <h1>Play hard.<br><span class="hl-coral">Dress</span> bold.<br><span class="hl-teal">Grow</span> happy.</h1>
+        <p class="lead">TOP TOYZ LLC brings together everything a growing family needs in one place — toys built for imagination and clothing built for everyday adventures, for kids and the grown-ups who love them.</p>
+        <div class="hero-actions">
+          <a href="#toys" class="btn btn-primary">Shop the Collection</a>
+          <a href="#about" class="btn btn-ghost">Our Story</a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <!-- Rocket -->
+        <svg class="float f1" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="80" cy="190" rx="34" ry="8" fill="#1B1B1F" opacity="0.08"/>
+          <path d="M80 10C50 40 45 110 50 150L80 165L110 150C115 110 110 40 80 10Z" fill="#FF6B52"/>
+          <circle cx="80" cy="85" r="20" fill="#FFF8EC" stroke="#E5503A" stroke-width="4"/>
+          <circle cx="80" cy="85" r="9" fill="#1B4B43"/>
+          <path d="M50 130 L25 165 L50 158Z" fill="#FFC44D"/>
+          <path d="M110 130 L135 165 L110 158Z" fill="#FFC44D"/>
+          <path d="M65 165 Q80 200 95 165 Q80 180 65 165Z" fill="#FFC44D"/>
+        </svg>
+        <!-- Teddy bear -->
+        <svg class="float f2" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="80" cy="150" rx="38" ry="7" fill="#1B1B1F" opacity="0.08"/>
+          <circle cx="40" cy="30" r="16" fill="#FFC44D"/>
+          <circle cx="120" cy="30" r="16" fill="#FFC44D"/>
+          <circle cx="80" cy="65" r="48" fill="#FFC44D"/>
+          <circle cx="60" cy="58" r="7" fill="#1B1B1F"/>
+          <circle cx="100" cy="58" r="7" fill="#1B1B1F"/>
+          <ellipse cx="80" cy="78" rx="14" ry="10" fill="#FFF8EC"/>
+          <circle cx="80" cy="76" r="5" fill="#1B1B1F"/>
+          <ellipse cx="80" cy="130" rx="40" ry="34" fill="#FFC44D"/>
+          <ellipse cx="80" cy="130" rx="20" ry="18" fill="#FFF8EC"/>
+        </svg>
+        <!-- Building blocks -->
+        <svg class="float f3" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="100" cy="150" rx="70" ry="9" fill="#1B1B1F" opacity="0.08"/>
+          <rect x="20" y="80" width="55" height="55" rx="8" fill="#1B4B43"/>
+          <text x="47" y="118" font-family="Baloo 2" font-size="30" fill="#FFF8EC" text-anchor="middle">A</text>
+          <rect x="80" y="55" width="55" height="80" rx="8" fill="#FF6B52"/>
+          <text x="107" y="100" font-family="Baloo 2" font-size="30" fill="#FFF8EC" text-anchor="middle">B</text>
+          <rect x="140" y="90" width="48" height="45" rx="8" fill="#C9B6E8"/>
+          <text x="164" y="120" font-family="Baloo 2" font-size="26" fill="#1B1B1F" text-anchor="middle">C</text>
+        </svg>
+        <!-- Onesie / fashion icon -->
+        <svg class="float f4" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="60" cy="112" rx="28" ry="6" fill="#1B1B1F" opacity="0.08"/>
+          <path d="M40 10H80L88 30L75 38V50H45V38L32 30Z" fill="#C9B6E8"/>
+          <path d="M45 50H75V100C75 106 70 110 60 110C50 110 45 106 45 100Z" fill="#C9B6E8"/>
+          <circle cx="60" cy="60" r="3.5" fill="#fff"/>
+          <circle cx="60" cy="72" r="3.5" fill="#fff"/>
+          <circle cx="60" cy="84" r="3.5" fill="#fff"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- shelf divider -->
+    <div class="wrap">
+      <div class="shelf" aria-hidden="true">
+        <svg viewBox="0 0 1180 64" preserveAspectRatio="none">
+          <rect x="0" y="46" width="1180" height="8" rx="4" fill="#1B4B43"/>
+          <circle cx="40" cy="50" r="4" fill="#FFC44D"/>
+          <circle cx="1140" cy="50" r="4" fill="#FFC44D"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust">
+    <div class="wrap">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>Registered LLC, USA</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Safety-tested products</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>Toys + Family Fashion in one shop</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Shipping nationwide</span>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="section" id="toys">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">What we sell</span>
+        <h2>Two collections, one happy household</h2>
+        <p>We curate toys that spark imagination and clothing the whole family can live in — picked for quality, safety, and everyday joy.</p>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card toys">
+          <div class="icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#E5503A" stroke-width="2"><rect x="3" y="9" width="7" height="7" rx="1"/><rect x="14" y="9" width="7" height="7" rx="1"/><path d="M6.5 9V6a2.5 2.5 0 015 0v3M17.5 9V6a2.5 2.5 0 00-5 0"/></svg>
+          </div>
+          <h3>Kids Toys</h3>
+          <p>Building blocks, plush companions, ride-ons, puzzles, and pretend-play sets for every age and stage.</p>
+          <div class="tag-row">
+            <span class="pill">RC Cars</span>
+            <span class="pill">Push Toys</span>
+            <span class="pill">Dino Toys</span>
+            <span class="pill">Educational</span>
+          </div>
+        </div>
+        <div class="cat-card fashion" id="fashion">
+          <div class="icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6B4FA0" stroke-width="2"><path d="M9 4l-5 3 2 4 2-1v10h8V10l2 1 2-4-5-3a2.5 2.5 0 01-5 0z"/></svg>
+          </div>
+          <h3>Family Fashion</h3>
+          <p>Everyday wear for kids and parents — matching sets, seasonal staples, and comfortable basics built to last through play.</p>
+          <div class="tag-row">
+            <span class="pill">Kids</span>
+            <span class="pill">Women</span>
+            <span class="pill">Men</span>
+            <span class="pill">Matching Sets</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT PREVIEW -->
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Best sellers</span>
+        <h2>Crowd favorites this season</h2>
+      </div>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-thumb" style="background:#FFE3DC;">
+            <svg width="92" height="92" viewBox="0 0 100 100">
+              <ellipse cx="50" cy="80" rx="38" ry="5" fill="#1B1B1F" opacity="0.08"/>
+              <path d="M15 62 L22 42 Q26 36 34 36 L66 36 Q74 36 78 42 L85 62 Z" fill="#FF6B52"/>
+              <rect x="30" y="44" width="40" height="14" rx="3" fill="#FFF8EC" opacity="0.85"/>
+              <circle cx="30" cy="65" r="11" fill="#1B1B1F"/>
+              <circle cx="30" cy="65" r="4.5" fill="#C8C8C8"/>
+              <circle cx="70" cy="65" r="11" fill="#1B1B1F"/>
+              <circle cx="70" cy="65" r="4.5" fill="#C8C8C8"/>
+              <rect x="12" y="56" width="10" height="6" rx="2" fill="#1B4B43"/>
+              <circle cx="74" cy="46" r="3" fill="#FFC44D"/>
+            </svg>
+          </div>
+          <div class="product-info"><div class="pname">Turbo Racer RC Car</div><div class="pprice">$34.99</div></div>
+        </div>
+        <div class="product-card">
+          <div class="product-thumb" style="background:#DCEFE9;">
+            <svg width="92" height="92" viewBox="0 0 100 100">
+              <ellipse cx="50" cy="80" rx="36" ry="5" fill="#1B1B1F" opacity="0.08"/>
+              <path d="M20 65 L25 38 Q27 32 34 32 L62 32 Q70 32 73 39 L80 65 Z" fill="#2E6B5E"/>
+              <rect x="33" y="40" width="34" height="12" rx="3" fill="#FFF8EC" opacity="0.85"/>
+              <circle cx="33" cy="68" r="10" fill="#1B1B1F"/>
+              <circle cx="33" cy="68" r="4" fill="#C8C8C8"/>
+              <circle cx="67" cy="68" r="10" fill="#1B1B1F"/>
+              <circle cx="67" cy="68" r="4" fill="#C8C8C8"/>
+              <circle cx="70" cy="42" r="2.6" fill="#FF6B52"/>
+            </svg>
+          </div>
+          <div class="product-info"><div class="pname">Off-Road Monster RC Truck</div><div class="pprice">$44.99</div></div>
+        </div>
+        <div class="product-card">
+          <div class="product-thumb" style="background:#FFF1D6;">
+            <svg width="92" height="92" viewBox="0 0 100 100">
+              <ellipse cx="50" cy="85" rx="34" ry="5" fill="#1B1B1F" opacity="0.08"/>
+              <rect x="33" y="56" width="34" height="22" rx="5" fill="#FFC44D"/>
+              <rect x="38" y="34" width="6" height="26" rx="3" fill="#1B4B43" transform="rotate(-12 41 47)"/>
+              <rect x="56" y="34" width="6" height="26" rx="3" fill="#1B4B43" transform="rotate(12 59 47)"/>
+              <rect x="20" y="14" width="60" height="10" rx="5" fill="#1B4B43"/>
+              <circle cx="22" cy="19" r="6" fill="#1B1B1F"/>
+              <circle cx="78" cy="19" r="6" fill="#1B1B1F"/>
+              <circle cx="42" cy="68" r="9" fill="#FF6B52"/>
+              <circle cx="58" cy="68" r="9" fill="#FF6B52"/>
+            </svg>
+          </div>
+          <div class="product-info"><div class="pname">First Steps Push Walker</div><div class="pprice">$29.99</div></div>
+        </div>
+        <div class="product-card">
+          <div class="product-thumb" style="background:#EDE5FA;">
+            <svg width="90" height="90" viewBox="0 0 100 100">
+              <ellipse cx="50" cy="85" rx="36" ry="5" fill="#1B1B1F" opacity="0.08"/>
+              <rect x="25" y="55" width="50" height="24" rx="6" fill="#C9B6E8"/>
+              <rect x="33" y="60" width="34" height="10" rx="3" fill="#FFF8EC" opacity="0.7"/>
+              <circle cx="36" cy="80" r="8" fill="#1B1B1F"/>
+              <circle cx="64" cy="80" r="8" fill="#1B1B1F"/>
+              <path d="M50 55 L50 28" stroke="#6B4FA0" stroke-width="6" stroke-linecap="round"/>
+              <circle cx="50" cy="22" r="10" fill="#6B4FA0"/>
+            </svg>
+          </div>
+          <div class="product-info"><div class="pname">Pop &amp; Push Activity Wagon</div><div class="pprice">$26.99</div></div>
+        </div>
+        <div class="product-card">
+          <div class="product-thumb" style="background:#FFE3DC;">
+            <svg width="92" height="92" viewBox="0 0 100 100">
+              <ellipse cx="55" cy="86" rx="34" ry="5" fill="#1B1B1F" opacity="0.08"/>
+              <path d="M30 82 Q20 60 28 45 Q22 38 26 28 Q32 33 36 34 Q44 24 56 26 Q66 18 76 24 Q74 30 68 33 Q76 38 76 48 Q84 52 84 62 L76 60 Q78 72 70 82 Q66 70 60 66 Q50 70 42 66 Q36 76 30 82Z" fill="#2E6B5E"/>
+              <circle cx="64" cy="30" r="2.6" fill="#FFF8EC"/>
+              <path d="M44 34 L40 26 M50 32 L48 22 M56 32 L56 22" stroke="#1B4B43" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="product-info"><div class="pname">Dino Explorer Figure Set</div><div class="pprice">$22.99</div></div>
+        </div>
+        <div class="product-card">
+          <div class="product-thumb" style="background:#FFF1D6;">
+            <svg width="92" height="92" viewBox="0 0 100 100">
+              <ellipse cx="50" cy="86" rx="36" ry="5" fill="#1B1B1F" opacity="0.08"/>
+              <path d="M18 78 Q22 50 38 46 Q36 36 44 30 Q46 22 56 22 Q62 14 72 18 Q70 26 64 28 Q72 30 74 40 Q82 44 80 56 L72 53 Q76 66 64 78 Q62 64 52 60 Q42 64 34 60 Q26 70 18 78Z" fill="#FF6B52"/>
+              <circle cx="62" cy="26" r="2.6" fill="#FFF8EC"/>
+              <path d="M46 30 L42 22 M54 26 L54 16" stroke="#E5503A" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="product-info"><div class="pname">Roaring T-Rex Toy</div><div class="pprice">$27.99</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about" style="padding-top:0;">
+    <div class="wrap">
+      <div class="about">
+        <div class="about-inner">
+          <div>
+            <span class="eyebrow" style="background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.2); color:#FFC44D;">Our Story</span>
+            <h2>Built by a family, for families</h2>
+            <p>TOP TOYZ LLC started with a simple idea: parents shouldn't need five different stores to outfit a happy household. We bring together carefully chosen toys and everyday family fashion, so play time and the closet are both covered in one trip.</p>
+            <div class="stat-grid">
+              <div class="stat"><b>500+</b><span>Products curated</span></div>
+              <div class="stat"><b>2</b><span>Core collections</span></div>
+              <div class="stat"><b>100%</b><span>Family-run</span></div>
+              <div class="stat"><b>USA</b><span>Based &amp; shipped</span></div>
+            </div>
+          </div>
+          <div class="about-art" aria-hidden="true">
+            <svg width="260" height="260" viewBox="0 0 260 260">
+              <circle cx="130" cy="130" r="120" fill="rgba(255,255,255,0.06)"/>
+              <circle cx="130" cy="130" r="85" fill="rgba(255,196,77,0.15)"/>
+              <path d="M130 60c-30 20-35 70-30 100l30 12 30-12c5-30 0-80-30-100z" fill="#FF6B52"/>
+              <circle cx="130" cy="120" r="14" fill="#FFF8EC"/>
+              <circle cx="130" cy="120" r="6" fill="#1B4B43"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Why families choose us</span>
+        <h2>What we stand for</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="num">Safety first</div>
+          <h3>Tested &amp; trusted</h3>
+          <p>Every toy meets safety standards for the age range it's made for, so playtime stays worry-free.</p>
+        </div>
+        <div class="value-card">
+          <div class="num">Fair pricing</div>
+          <h3>Quality, not markup</h3>
+          <p>We keep prices honest so a fully stocked toy box and closet doesn't break the budget.</p>
+        </div>
+        <div class="value-card">
+          <div class="num">Real support</div>
+          <h3>People, not bots</h3>
+          <p>Questions about sizing, age range, or an order? A real person on our team replies fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / BUSINESS INFO -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Get in touch</span>
+        <h2>Contact TOP TOYZ LLC</h2>
+        <p>Have a question about an order, a wholesale inquiry, or a partnership? Reach out below.</p>
+      </div>
+      <div class="contact">
+        <div class="contact-grid">
+          <div class="info-list">
+            <div class="info-item">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+              <div><h4>Email</h4><p>bptgeneralllc@gmail.com</p></div>
+            </div>
+            <div class="info-item">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.7a16 16 0 006.3 6.3l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2.2z"/></svg></div>
+              <div><h4>Phone</h4><p>+1 (847) 654-7328</p></div>
+            </div>
+            <div class="info-item">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><h4>Registered business address</h4><p>21920 Foxhaven Run, APT 7, Waukesha, WI 60173</p></div>
+            </div>
+            <div class="info-item">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M12 3l7 4v5c0 5-3.5 8.5-7 9.5C8.5 20.5 5 17 5 12V7z"/></svg></div>
+              <div><h4>Business entity</h4><p>TOP TOYZ LLC</p></div>
+            </div>
+          </div>
+          <form onsubmit="event.preventDefault(); this.querySelector('.sent').style.display='block';">
+            <div class="form-field"><label for="name">Name</label><input id="name" type="text" placeholder="Your name" required></div>
+            <div class="form-field"><label for="email">Email</label><input id="email" type="email" placeholder="you@email.com" required></div>
+            <div class="form-field"><label for="msg">Message</label><textarea id="msg" rows="4" placeholder="How can we help?" required></textarea></div>
+            <button class="btn btn-primary" type="submit" style="width:100%; justify-content:center;">Send Message</button>
+            <p class="sent" style="display:none; margin-top:12px; font-size:13.5px; color:var(--teal); font-weight:700;">Thanks — we'll be in touch soon.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo"><span class="dot"></span>TOP TOYZ <span style="color:var(--coral)">LLC</span></a>
+        <p>Kids toys and family fashion, curated with care. Registered and operating in the United States.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Shop</h5>
+          <ul><li><a href="#toys">Toys</a></li><li><a href="#fashion">Family Fashion</a></li><li><a href="#about">About Us</a></li></ul>
+        </div>
+        <div class="foot-col">
+          <h5>Company</h5>
+          <ul><li><a href="#contact">Contact</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Returns</a></li></ul>
+        </div>
+        <div class="foot-col">
+          <h5>Legal</h5>
+          <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 TOP TOYZ LLC. All rights reserved.</span>
+      <span></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
